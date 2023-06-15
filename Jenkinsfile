@@ -7,7 +7,7 @@ pipeline{
           stage('Checkout'){
               agent any
               steps{
-              git 'https://github.com/devops-trainer/DevOpsClassCodes.git'
+              git 'https://github.com/devops-trainer/NuveproRepo.git'
               }
           }
           stage('Compile'){
@@ -19,10 +19,9 @@ pipeline{
           stage('UnitTest'){
               agent any
               steps{
-                  git 'https://github.com/devops-trainer/DevOpsClassCodes.git'
+                  git 'https://github.com/devops-trainer/NuveproRepo.git'
                   sh 'mvn test'
-              }
-              
+              }              
           }          
           stage('Package'){
               agent any
