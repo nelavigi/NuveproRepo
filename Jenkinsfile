@@ -7,7 +7,7 @@ pipeline{
           stage('Checkout'){
               agent any
               steps{
-              git 'https://github.com/nelavig/NuveproRepo.git'
+              git 'https://github.com/nelavigi/NuveproRepo.git'
               }
           }
           stage('Compile'){
@@ -19,7 +19,7 @@ pipeline{
           stage('UnitTest'){
               agent any
               steps{
-                  git 'https://github.com/nelavig/NuveproRepo.git'
+                  git 'https://github.com/nelavigi/NuveproRepo.git'
                   sh 'mvn test'
               }              
           }          
