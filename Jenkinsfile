@@ -1,6 +1,7 @@
 pipeline{
     tools{        
-        maven 'MAVEN_HOME'
+        maven 'my_maven'
+        jdk 'my_jdk'
     }
     agent none
       stages{
@@ -13,20 +14,19 @@ pipeline{
           stage('Compile'){
               agent any
               steps{
-                  sh 'mvn compile'
+                  bat 'mvn compile'
               }
           }
           stage('UnitTest'){
               agent any
-              steps{
-                  git 'https://github.com/nelavigi/NuveproRepo.git'
-                  sh 'mvn test'
+              steps{                  
+                  bat 'mvn test'
               }              
           }          
           stage('Package'){
               agent any
               steps{
-                  sh 'mvn package'
+                  bat 'mvn package'
               }
           }
       }
