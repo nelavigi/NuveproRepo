@@ -8,7 +8,10 @@ pipeline{
           stage('Checkout'){
               agent any
               steps{
-              git 'https://github.com/nelavigi/NuveproRepo.git'
+              script {
+                    git branch: 'main',                        
+                        url: 'https://github.com/nelavigi/NuveproRepo.git'
+                }
               }
           }
           stage('Compile'){
